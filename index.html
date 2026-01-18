@@ -2,40 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Malla Curricular</title>
-  <style>
-    body { font-family: Arial; padding: 20px; }
-    .curso {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-    }
-    .bloqueado { opacity: 0.4; }
-    button { margin-top: 5px; }
-  </style>
+  <title>Malla Curricular Interactiva</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>📘 Mi Malla Curricular</h1>
+<h1>🌸 Mi Malla Curricular</h1>
+<p>Haz clic en un ramo para aprobarlo. Al aprobarlo, se desbloquean los ramos dependientes.</p>
 
-<div id="mate1" class="curso">
-  <b>Matemática Básica</b><br>
-  <button onclick="aprobar('mate2')">Aprobar</button>
-</div>
+<div id="malla"></div>
 
-<div id="mate2" class="curso bloqueado">
-  <b>Matemática Básica II</b><br>
-  <button disabled>Aprobar</button>
-</div>
-
-<script>
-function aprobar(id) {
-  const siguiente = document.getElementById(id);
-  siguiente.classList.remove('bloqueado');
-  siguiente.querySelector('button').disabled = false;
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
